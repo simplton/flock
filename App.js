@@ -22,11 +22,12 @@ const firebaseConfig = {
   databaseURL: "https://flock-c2a26.firebaseio.com",
   storageBucket: "flock-c2a26.appspot.com",
 };
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 export default class App extends React.Component {
   constructor(props) {
       super(props);
+      firebase.initializeApp(firebaseConfig)
       this.state = {
         dataSource: new ListView.DataSource({
           rowHasChanged: (row1, row2) => row1 !== row2,
@@ -36,7 +37,7 @@ export default class App extends React.Component {
     }
 
     getRef() {
-      return firebaseApp.database().ref();
+      return firebase.database().ref();
     }
 
     listenForItems(itemsRef) {
@@ -116,3 +117,5 @@ export default class App extends React.Component {
     }
 
   }
+
+  AppRegistry.registerComponent("flock", () => App);
