@@ -1,4 +1,9 @@
 node_modules/
 .expo/
+
 npm-debug.*
+.idea/
+
+## Directory-based project format:
+.vscode/
 .idea/
