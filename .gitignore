@@ -7,3 +7,5 @@ npm-debug.*
 ## Directory-based project format:
 .vscode/
 .idea/
+
+package-lock.json
